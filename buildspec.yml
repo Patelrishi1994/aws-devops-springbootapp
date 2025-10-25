@@ -9,7 +9,7 @@ phases:
       # update below 
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 495599776711.dkr.ecr.us-east-2.amazonaws.com
       - # Replace with this to your repository URI
-      - 495599776711.dkr.ecr.us-east-2.amazonaws.com/capstoneproject
+      - REPOSITORY_URI=495599776711.dkr.ecr.us-east-2.amazonaws.com/capstoneproject
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
